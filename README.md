@@ -23,7 +23,7 @@ Frontend:
 
 * React (Functional Components)
 * Hooks (useState, useEffect)
-* CSS / Bootstrap (optional)
+* CSS / Tailwind (optional)
 
 Backend:
 
@@ -47,7 +47,7 @@ Database:
 
 1. Clone the repository
 
-git clone https://github.com/your-username/task-manager.git
+git clone https://github.com/debstixx/taskpersonal
 cd task-manager
 
 2. Install dependencies
@@ -60,7 +60,7 @@ npm install
 Frontend:
 
 cd client
-npm install
+npm create vite@latest
 
 ⸻
 
@@ -83,7 +83,7 @@ npm run dev
 Start frontend:
 
 cd client
-npm start
+npm run dev
 
 ⸻
 
@@ -92,7 +92,7 @@ npm start
 Method	Endpoint	Description
 GET	/tasks	Get all tasks
 POST	/tasks	Create a new task
-PUT	/tasks/	Update a task
+PATCH	/tasks/	Update a task
 DELETE	/tasks/	Delete a task
 
 ⸻
@@ -101,9 +101,8 @@ DELETE	/tasks/	Delete a task
 
 * title (String, required)
 * description (String, required)
-* dueDate (Date, required)
-* category (String, required)
-* completed (Boolean, default: false)
+* tag (String, required)
+* date (Date, Timestamp, required)
 
 ⸻
 
