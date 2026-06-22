@@ -1,16 +1,139 @@
-# React + Vite
+Personal Task Manager (MERN Stack) – Adding to an Existing GitHub Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📌 Overview
 
-Currently, two official plugins are available:
+This is a full-stack Personal Task Manager application built using the MERN stack (MongoDB, Express, React, Node.js). It allows users to create, manage, and track tasks with categories and completion status.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+⸻
 
-## React Compiler
+🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Create, update, and delete tasks
+* View all tasks in a responsive layout (table or cards)
+* Assign categories (Work, Personal, Urgent, etc.)
+* Mark tasks as completed or pending
+* Filter tasks by category and completion status
+* Form validation (no empty fields, no past due dates)
 
-## Expanding the ESLint configuration
+⸻
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠️ Tech Stack
+
+Frontend:
+
+* React (Functional Components)
+* Hooks (useState, useEffect)
+* CSS / Tailwind (optional)
+
+Backend:
+
+* Node.js
+* Express.js
+
+Database:
+
+* MongoDB (with Mongoose)
+
+⸻
+
+📂 Project Structure
+
+/client   → React frontend
+/server   → Express backend
+
+⸻
+
+⚙️ Installation & Setup
+
+1. Clone the repository
+
+git clone https://github.com/debstixx/taskpersonal
+cd task-manager
+
+2. Install dependencies
+
+Backend:
+
+cd server
+npm install
+
+Frontend:
+
+cd client
+npm create vite@latest
+
+⸻
+
+3. Setup environment variables
+
+Create a .env file in the /server folder:
+
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+
+⸻
+
+4. Run the app
+
+Start backend:
+
+cd server
+npm run dev
+
+Start frontend:
+
+cd client
+npm run dev
+
+⸻
+
+📡 API Endpoints
+
+Method	Endpoint	Description
+GET	/tasks	Get all tasks
+POST	/tasks	Create a new task
+PATCH	/tasks/	Update a task
+DELETE	/tasks/	Delete a task
+
+⸻
+
+🧾 Task Schema (Mongoose)
+
+* title (String, required)
+* description (String, required)
+* tag (String, required)
+* date (Date, Timestamp, required)
+
+⸻
+
+⚠️ Validation Rules
+
+* All fields are required
+* Due date cannot be in the past
+
+⸻
+
+❌ Error Handling
+
+* Proper HTTP status codes (200, 400, 404, 500)
+* Try/catch blocks in backend routes
+
+⸻
+
+🔮 Future Improvements
+
+* Add authentication (login/signup)
+* Add task reminders/notifications
+* Drag-and-drop task organization
+
+⸻
+
+👤 Author
+
+Adebowale
+
+⸻
+
+📄 License
+
+This project is open-source and free to us
