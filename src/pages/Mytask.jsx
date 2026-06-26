@@ -75,12 +75,20 @@ return (
       {/*Hero Text */}
       <div className='container mx-auto w-11/12 px-2 py-4 flex justify-between items-center'>
              <h1 className="text-[rgba(41,41,41,1)] font-['Signika_Negative'] font-medium text-2xl md:text-4xl">My Tasks</h1>
-             <Link to="/newtask">
-                 <div className='flex flex-row gap-1 md:gap-3 items-center'>
-                    <Plus className='text-[rgba(151,79,208,1)] w-[18px] md:w-auto'/>
-                    <h2 className="font-['Signika_Negative'] font-medium text-base md:text-2xl text-[rgba(151,79,208,1)]">Add New Task</h2>
-                 </div>
-             </Link>
+             <div className='flex flex-col md:flex-row gap-1 md:gap-6 items-center'>
+                <Link to="/newtask">
+                    <div className='flex flex-row gap-1 md:gap-3 items-center'>
+                        <Plus className='text-[rgba(151,79,208,1)] w-[18px] md:w-auto'/>
+                        <h2 className="font-['Signika_Negative'] font-medium text-base md:text-2xl text-[rgba(151,79,208,1)]">Add New Task</h2>
+                    </div>
+                </Link>
+                <Link to="/trash">
+                    <div className='flex flex-row gap-1 md:gap-2 items-center cursor-pointer'>
+                        <Trash2 className='text-[rgba(151,79,208,1)] w-[18px] md:w-auto'/>
+                        <h2 className="font-['Signika_Negative'] font-medium text-base md:text-2xl text-[rgba(151,79,208,1)]">View Trash</h2>
+                    </div>
+                </Link>
+             </div>
       </div>
           
         {/* loading loop section from loading state if data have arrived or not from the server */}
@@ -97,12 +105,10 @@ return (
                       <div className='flex justify-between items-center'>
                           
                           {/*color contoller to change 'task.tag' schema input */}
-                          <h3 className={`font-normal font-['Signika_Negative'] text-2xl ${task.tag === 'Urgent' ? 'text-[rgba(243,131,131,1)]' : 'text-[rgba(115,195,166,1)]'}`}>
-                              {task.tag || "General"}
-                          </h3>
+                          <h3 className={`font-normal font-['Signika_Negative'] text-2xl ${task.tag === 'Urgent' ? 'text-[rgba(243,131,131,1)]' : 'text-[rgba(115,195,166,1)]'}`}>{task.tag || "General"}</h3>
                           
                           <div className='flex flex-row gap-2 md:gap-8'>
-                              {/*pass values over state parameter payload for populate edit form instantly */}
+                              {/*passing values over state parameter payload for populate edit form instantly */}
                               <Link to={`/editask/${task._id}`} state={{ taskId: task._id, taskTitle: task.title, taskDesc: task.description, taskTag: task.tag }}>
                                   <button className='flex flex-row gap-1 md:gap-2 bg-[rgba(151,79,208,1)] px-2 md:px-4 py-2 item-center rounded'>
                                     <SquarePen className='text-[rgba(250,249,251,1)] w-[16px]'/>

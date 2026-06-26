@@ -13,7 +13,7 @@ const Register = () => {
     const [passwordError, setPasswordError] = useState("");
     const [serverError, setServerError] = useState("");//the display error from backend server
           
-         const navigate = useNavigate();//this send user to login page
+        const navigate = useNavigate();//this send user to login page
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -65,7 +65,7 @@ const Register = () => {
           } catch (error) {
               console.error("Registration failed:", error);
             if (error.response && error.response.data) {
-                //this helps captures validation or unique email errors handled by your backend utility
+                //this helps captures validation or unique email errors handled by at backend utility
                 setServerError(error.response.data.msg || "Registration failed. Try a different email.");
             } else {
                 setServerError("Cannot connect to server. Is your backend running?");

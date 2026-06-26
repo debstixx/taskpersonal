@@ -59,11 +59,10 @@ const LogIn = () => {
             }
 
         } catch (error) {
-            //handle errors sent back by your backend/handleError utility
-            console.error("Login request failed:", error);
+            console.error("Login request failed:", error);//handle errors sent back by your backend/handleError utility
             
             if (error.response && error.response.data) {
-                // captures "incorrect email", "incorrect password"
+                //captures "incorrect email", "incorrect password"
                 setServerError(error.response.data.msg || "Authentication failed.");
             } else {
                 setServerError("Cannot connect to server. Is your backend running?");
@@ -104,7 +103,12 @@ const LogIn = () => {
                         {/*Display the password error message here */}
                         {passwordError && <p className="text-red-500 text-xs mt-1 font-['Signika_Negative']">{passwordError}</p>}
                       </div> 
-
+                       
+                      {serverError && (
+                          <p className="text-red-500 text-sm font-medium mt-4 text-center font-['Signika_Negative'] bg-red-50 p-2 rounded-lg border border-red-200">
+                            {serverError}
+                          </p>
+                      )}
                       <button className="font-['Signika_Negative'] text-white bg-[rgba(151,79,208,1)] w-full text-base border rounded-xl mt-6 p-2 hover:bg-purple-400 cursor-pointer">Log In</button>
                       <p className="font-['Signika_Negative'] text-[rgba(156,156,156,1)] md:text-center mt-4">Don’t have an account yet?  <Link to="/register"><span className="text-[rgba(151,79,208,1)]">Register</span></Link></p>
               </form>

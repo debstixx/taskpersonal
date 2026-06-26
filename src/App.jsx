@@ -6,6 +6,7 @@ import Editask from './pages/Editask'
 import LogIn from './pages/LogIn'
 import Register from './pages/Register'
 import Profile from './pages/Profile'
+import Trash from './pages/Trash'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProtectedRoute from './component/ProtectedRoute'
 
@@ -19,6 +20,7 @@ function App() {
         {/* <Newtask/> */}
         {/* <Editask/> */}
         {/* <Profile/> */}
+        {/* <Trash/> */}
       <Router>
           <Routes>
             {/*Public Routes */}
@@ -31,6 +33,7 @@ function App() {
                 <Route path="/newtask" element={<ProtectedRoute><Newtask/></ProtectedRoute>}/>
                 <Route path="/editask/:taskId" element={<ProtectedRoute><Editask/></ProtectedRoute>}/>
                 <Route path="/profile" element={<ProtectedRoute><Profile/></ProtectedRoute>}/>
+                <Route path="/trash" element={<ProtectedRoute><Trash/></ProtectedRoute>}/>
           </Routes>
       </Router>
     </>
